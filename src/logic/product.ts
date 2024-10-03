@@ -3,7 +3,6 @@ import * as repositry from "../repository/product";
 import { makeResponse } from "../helpers/response";
 
 export const create = async (payload: IProduct) => {
-  console.log(payload);
   let product = await repositry.createProduct(payload);
   console.log(product);
   if (!product) {
@@ -11,7 +10,6 @@ export const create = async (payload: IProduct) => {
   }
   return makeResponse(true, "Product created successfully", {}, 200);
 };
-
 
 // {
 //   "name": "Curly Lace Front Wig",

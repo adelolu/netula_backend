@@ -1,5 +1,12 @@
 import { Request, Response } from "express";
 import User from "../models/user";
+import * as userLogic from "../logic/user";
+import { responseHandler } from "../middleware/validators/helpers";
+
+export const updateUser = async (req: Request, res: Response) => {
+  let response = await userLogic.updateUser(req.user, req.body);
+  return responseHandler(res, response);
+};
 
 //function to display all users
 export const getAllUsers = async (req: Request, res: Response) => {

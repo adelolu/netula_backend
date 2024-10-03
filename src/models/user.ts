@@ -6,11 +6,11 @@ const userSchema = new Schema<IUser>(
     username: { type: String, required: true },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    email: { type: String, unique: true, required: true },
+    email: { type: String, unique: true, required: true, lowercase: true },
     password: { type: String, required: true },
     phoneNumber: { type: String },
     dateOfBirth: { type: Date },
-    gender: { type: String},
+    gender: { type: String },
 
     // Address Information
     shippingAddress: {

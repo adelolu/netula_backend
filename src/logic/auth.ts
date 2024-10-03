@@ -11,11 +11,6 @@ import Email from "../services/email";
 import crypto from "crypto";
 
 export const createUser = async (payload: IUser) => {
-  //@TOdo validate email in joi
-  if (!validateEmail(payload.email)) {
-    return makeResponse(false, "Invalid Email");
-  }
-  payload.email = payload.email!.toLowerCase();
   let existuser = await userRepository.findUserByMatch({
     email: payload.email,
   });
@@ -131,14 +126,14 @@ export const resetPassword = async (payload: { password: string }) => {
 //   "email": "jane.doe@example.com",
 //   "passwordHash": "$2b$10$7EJ/123hashPlaceholder987XY",
 //   "phone": "+1234567890",
-//   "shippingAddress": {
-//     "addressLine1": "123 Main Street",
-//     "addressLine2": "Apt 4B",
-//     "city": "Los Angeles",
-//     "state": "CA",
-//     "postalCode": "90001",
-//     "country": "USA"
-//   },
+// "shippingAddress": {
+//   "addressLine1": "123 Main Street",
+//   "addressLine2": "Apt 4B",
+//   "city": "Los Angeles",
+//   "state": "CA",
+//   "postalCode": "90001",
+//   "country": "USA"
+// },
 //   "billingAddress": {
 //     "addressLine1": "123 Main Street",
 //     "addressLine2": "Apt 4B",

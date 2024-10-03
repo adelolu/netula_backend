@@ -21,17 +21,7 @@ export const handleUpload = async (
       resource_type: "auto",
       format,
       public_id: name,
-      folder: "blog",
+      folder: "netula",
     })
     .catch((error) => console.log(error));
-
-  // let result = await cloudinary.uploader.upload(
-  //   "c:/Users/USER/Pictures/zoro.jpg",
-  //   {
-  //     folder: "blog",
-  //     resource_type: "image",
-  //     public_id: name,
-  //   }
-  // );
-  // console.log(result);
 };

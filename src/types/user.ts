@@ -35,3 +35,8 @@ export const UserRoles = {
   admin: "admin",
   customer: "customer",
 } as const;
+
+export interface IUserUpdate extends IUser {
+  oldPassword: string;
+  newPassword: string;
+}
